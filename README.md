@@ -11,7 +11,7 @@ A simple command-line application to manage a company's employee database.
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-This application uses the NodeJS environment. Firstly make sure to have this set up on your local workstation or remote server. Also install PostgreSQL to be used as the database.
+This application uses the NodeJS environment. Firstly make sure to have this set up on your local workstation or remote server. Also install PostgreSQL to be used as the database server.
 
 1. Clone the repo into your local workstation or remote server
 2. Navigate into the folder with your Terminal/Console
