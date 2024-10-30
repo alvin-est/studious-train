@@ -1,8 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-require('dotenv').config();
-const { Pool } = require('pg');
+/* Using ES6 */
+// Import necessary modules
+import fs from 'fs';
+import path from 'path';
+const { dirname } = path;
+import 'dotenv/config';
+import pg from 'pg';
+const { Pool } = pg;
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 async function runSQL(fileName) {
     const pool = new Pool({
@@ -97,9 +104,12 @@ async function init() {
         console.error('Failed to initialise database', err);
     }
     finally {
+        console.log('\n');
         process.exit();
     }
-
 }
 
 init();
+
+
+// export default init;
