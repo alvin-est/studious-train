@@ -1,14 +1,14 @@
-import startUI from './utils/ui.js';
-import route from './utils/menuLogic.js';
+import startMenu from "./utils/startMenu.js";
+import viewUI from "./utils/viewUI.js";
 
 async function main() {
     console.log('Welcome to SQL Employee Tracker!');
 
-    const selection = await startUI();
-    console.log('Selected:', selection); // for dev purposes
+    // Prompt user
+    const userSelection = await startMenu();
+    console.log(userSelection);
 
-    // Pass selection to next function
-    console.log(await route(selection));
+
 }
 
 main();
