@@ -21,6 +21,8 @@ This application uses the NodeJS environment. Firstly make sure to have this set
 ## Usage
 To use the app:  
 Run 'node app' in your Terminal. Follow the prompts of the app's user interface.
+
+There is also a walkthrough video available, see: [App Walkthrough Video](https://youtu.be/NgfZdvQXRpg)
 ## License
       This project is licensed under the MIT license.
 ## Screenshots
