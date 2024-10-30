@@ -1,5 +1,5 @@
 import inquirer from "inquirer";
-import { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } from "./actionHandler.js";
+import { viewAllDepartments, viewAllRoles, viewAllEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole, exitApp } from "./actionHandler.js";
 
 async function startMenu() {
     const actions = {
@@ -10,6 +10,7 @@ async function startMenu() {
         'Add a role': addRole,
         'Add an employee': addEmployee,
         'Update an employee\'s role': updateEmployeeRole,
+        'Exit': exitApp,
     };
 
     const userSelection = await inquirer.prompt([
@@ -21,7 +22,8 @@ async function startMenu() {
         }
     ]);
 
-    await actions[userSelection.menu]();
+    const result = await actions[userSelection.menu]();
+    return result;
 }
 
 export default startMenu;

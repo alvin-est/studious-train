@@ -12,3 +12,6 @@
     if(boolUpdate) {
 
     }
+
+
+    validate: (input) => { if (isNaN(input)) return `Manager ID should be a number.`; return true; }

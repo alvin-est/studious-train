@@ -9,18 +9,34 @@
 import startMenu from "./utils/startMenu.js";
 
 async function main() {
-    console.log('Welcome to SQL Employee Manager v0.1!');
 
+    console.log('\n')
+    const asciiArt = [
+        "┏┓┏┓┓            ",
+        "┗┓┃┃┃            ",
+        "┗┛┗┻┗┛           ",
+        "┏┓     ┓         ",
+        "┣ ┏┳┓┏┓┃┏┓┓┏┏┓┏┓ ",
+        "┗┛┛┗┗┣┛┗┗┛┗┫┗ ┗  ",
+        "┳┳┓  ┛     ┛     ",
+        "┃┃┃┏┓┏┓┏┓┏┓┏┓┏┓  ",
+        "┛ ┗┗┻┛┗┗┻┗┫┗ ┛   ",
+        "  ┏┓ ┓ ┏┓ ┛      ",
+        "┓┏┃┫ ┃ ┃┫        ",
+        "┗┛┗┛•┻•┗┛        "
+    ];
+    console.log(asciiArt.join('\n'));
+    console.log('\nWelcome to SQL Employee Manager v0.1!\n\n');
+
+
+    // Prompt user - leave in while loop to keep continous appearance on screen
     let toggle = true;
-
-    // Prompt user
     while(toggle) {
         const userSelection = await startMenu();
-        console.log(userSelection);
 
-        // toggle = !toggle;
+        // Pickle Rick!! Await the magic word to exit out of the app.
+        if(userSelection === 'Wubbalubbadubdubification') { toggle = !toggle; console.log(`\n🐟 So long and thanks for all the fish! 🐟\n`) };
     }
-
 
     process.exit();
 }

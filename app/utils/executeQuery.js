@@ -18,7 +18,7 @@ export default async function executeQuery(sql) {
     try {
         const result = await client.query(sql);
         // const data = result.rows;
-        console.log('Executed SQL!')
+        // console.log('Executed SQL!')
         return result;
     }
     catch (err) {

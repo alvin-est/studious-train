@@ -90,11 +90,11 @@ export async function addEmployee() {
             type: 'input',
             name: 'manager',
             message: 'Enter the manager ID for the employee:',
-            validate: validateNumber('Manager ID')
+            validate: (input) => { if (isNaN(input)) return `Manager ID should be a number.`; return true; }
         }
     ]);
 
-    // Make exception for manager so it can be null
+    // Make an exception for Manager ID so it can be null
     const managerConditional = manager === '' ? 'null' : manager;
     const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('${first_name}', '${last_name}', ${role}, ${managerConditional});`;
     await executeQuery(sql);
@@ -134,11 +134,16 @@ function validateLength(name, maxLength) {
 
 function validateNumber(name) {
     return function(input) {
-        if(!input === 'Manager ID') {
-            // Cannot be null unless for Manager ID
-            if (!input || input.trim() === '') return `${name} cannot be empty.`;
-        }
+
+        if (!input || input.trim() === '') return `${name} cannot be empty.`;
+
         if (isNaN(input)) return `${name} should be a number.`;
         return true;
     }
+}
+
+/* Is it Easter yet? */
+export async function exitApp() {
+    // Returns the magic word to portal out of here! D:
+    return 'Wubbalubbadubdubification';
 }
