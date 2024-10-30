@@ -26,7 +26,7 @@ Run 'node app' in your Terminal. Follow the prompts of the app's user interface.
 ## Screenshots
 ![Screenshot](./misc/screenshot.png)
 ## Contributors
-@alvin-est for the Coding Bootcamp at USYD.
+[@alvin-est](https://github.com/@alvin-est) for the Coding Bootcamp at USYD.
 ## Tests
 N/A
 ## Questions
